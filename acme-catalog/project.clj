@@ -16,8 +16,10 @@
   :ring {:handler acme-catalog.core/app
          :port 6003
          :init acme-catalog.core/bootstrap}
+  :aliases { "debug" ["with-profile" "dev" "ring" "server-headless"] }
   :profiles {:dev {:plugins [[lein-ring "0.9.3"]]
-                   :test-paths ^:replace []}
+                   :test-paths ^:replace []
+                   :jvm-opts ["-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=16003"]}
              :test {:dependencies [[midje "1.6.3"]]
                     :plugins [[lein-midje "3.1.3"]]
                     :test-paths ["test"]

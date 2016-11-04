@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/acme-auth/acme-auth.iml" filepath="$PROJECT_DIR$/acme-auth/acme-auth.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/acme-buddy.iml" filepath="$PROJECT_DIR$/.idea/acme-buddy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/acme-catalog/acme-catalog.iml" filepath="$PROJECT_DIR$/acme-catalog/acme-catalog.iml" />
+      <module fileurl="file://$PROJECT_DIR$/acme-webstore/acme-webstore.iml" filepath="$PROJECT_DIR$/acme-webstore/acme-webstore.iml" />
+    </modules>
+  </component>
+</project>

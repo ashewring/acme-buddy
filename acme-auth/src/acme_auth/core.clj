@@ -6,7 +6,8 @@
                                           wrap-json-params]]
             [acme-auth.datasource :refer [get-ds]]
             [acme-auth.bootstrap :refer [create-db seed]]
-            [acme-auth.handlers :as handlers]))
+            [acme-auth.handlers :as handlers]
+            [ring.logger :as logger]))
 
 
 
@@ -41,4 +42,5 @@
       wrap-config
       wrap-keyword-params
       wrap-json-params
-      wrap-json-response))
+      wrap-json-response
+      logger/wrap-with-logger))

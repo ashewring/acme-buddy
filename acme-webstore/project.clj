@@ -16,8 +16,10 @@
                  [buddy/buddy-sign "0.3.0"]]
   :ring {:handler acme-webstore.web/app
          :port 6002}
+  :aliases { "debug" ["with-profile" "dev" "ring" "server"] }
   :profiles {:dev {:plugins [[lein-ring "0.8.13"]]
-                   :test-paths ^:replace []}
+                   :test-paths ^:replace []
+                   :jvm-opts ["-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=16002"]}
              :test {:dependencies [[midje "1.6.3"]]
                     :plugins [[lein-midje "3.1.3"]]
                     :test-paths ["test"]

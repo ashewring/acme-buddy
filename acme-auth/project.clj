@@ -13,12 +13,15 @@
                  [ring/ring-json "0.3.1"]
                  [ch.qos.logback/logback-classic "1.1.2"]
                  [buddy/buddy-sign "0.3.0"]
-                 [buddy/buddy-hashers "0.3.0"]]
+                 [buddy/buddy-hashers "0.3.0"]
+                 [ring-logger "0.7.6"]]
   :ring {:handler acme-auth.core/app
          :port 6001
          :init acme-auth.core/bootstrap}
+  :aliases { "debug" ["with-profile" "dev" "ring" "server-headless"] }
   :profiles {:dev {:plugins [[lein-ring "0.8.13"]]
-                   :test-paths ^:replace []}
+                   :test-paths ^:replace []
+                   :jvm-opts ["-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=16001"]}
              :test {:dependencies [[midje "1.6.3"]]
                     :plugins [[lein-midje "3.1.3"]]
                     :test-paths ["test"]
