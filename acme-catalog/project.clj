@@ -11,8 +11,10 @@
                  [compojure "1.3.2"]
                  [ring/ring-jetty-adapter "1.3.2"]
                  [ring/ring-json "0.3.1"]
+                 [ch.qos.logback/logback-classic "1.1.2"]
                  [liberator "0.12.2"]
-                 [buddy/buddy-auth "0.4.1"]]
+                 [buddy/buddy-auth "0.4.1"]
+                 [ring-logger "0.7.6"]]
   :ring {:handler acme-catalog.core/app
          :port 6003
          :init acme-catalog.core/bootstrap}

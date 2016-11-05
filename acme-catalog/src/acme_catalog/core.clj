@@ -8,7 +8,8 @@
             [buddy.auth.backends.token :refer [jws-backend]]
             [buddy.auth.middleware :refer [wrap-authentication]]
             [buddy.core.keys :as ks]
-            [acme-catalog.resources :as r]))
+            [acme-catalog.resources :as r]
+            [ring.logger :as logger]))
 
 
 (defn bootstrap []
@@ -27,4 +28,5 @@
   (-> app-routes
       (wrap-authentication auth-backend)
       wrap-keyword-params
-      wrap-json-params))
+      wrap-json-params
+      logger/wrap-with-logger))
