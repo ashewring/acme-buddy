@@ -13,7 +13,8 @@
                  [hiccup "1.0.5"]
                  [clj-http "1.0.1"]
                  [ch.qos.logback/logback-classic "1.1.2"]
-                 [buddy/buddy-sign "0.3.0"]]
+                 [buddy/buddy-sign "0.3.0"]
+                 [ring-logger "0.7.6"]]
   :ring {:handler acme-webstore.web/app
          :port 6002}
   :aliases { "debug" ["with-profile" "dev" "ring" "server"] }

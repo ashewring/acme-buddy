@@ -6,7 +6,8 @@
             [compojure.route :as route]
             [ring.middleware.params :refer [wrap-params]]
             [ring.middleware.absolute-redirects :refer [wrap-absolute-redirects]]
-            [ring.middleware.keyword-params :refer [wrap-keyword-params]]))
+            [ring.middleware.keyword-params :refer [wrap-keyword-params]]
+            [ring.logger :as logger]))
 
 
 (defn show-index [req]
@@ -52,4 +53,5 @@
              wrap-params
              wrap-absolute-redirects
              sec/wrap-authorized-redirects
-             (sec/wrap-auth-cookie "SoSecret12345678")))
+             (sec/wrap-auth-cookie "SoSecret12345678")
+             logger/wrap-with-logger))
